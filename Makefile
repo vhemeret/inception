@@ -1,8 +1,8 @@
 all: 
 	mkdir -p /home/vahemere/data/mariadb
 	mkdir -p /home/vahemere/data/wordpress
-	docker compose -f ./srcs/docker-compose.yml build
-	docker compose -f ./srcs/docker-compose.yml up -d
+	sudo docker compose -f ./srcs/docker-compose.yml build #--progress=plain
+	sudo docker compose -f ./srcs/docker-compose.yml up 
 
 logs:
 	docker logs wordpress
@@ -10,8 +10,8 @@ logs:
 	docker logs nginx
 
 clean:
-	docker container stop nginx mariadb wordpress
-	docker network rm inception
+	sudo docker container stop nginx mariadb wordpress
+	sudo docker network rm inception
 
 fclean: clean
 	@sudo rm -rf /home/vahemere/data/mariadb/*
