@@ -4,10 +4,13 @@
 
 # PORT COMMUNICATION
 port		        = 3306
+
 # DIRECTORIE WHO STOCK DE BDD
 datadir		        = /var/lib/mysql
+
 # ADDING USER
 user		        = mysql
+
 # PATH TO THE SOCKET FOR COMMUNICATION
 socket		        = /var/run/mysqld/mysqld.sock
 

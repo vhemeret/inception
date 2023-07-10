@@ -2,7 +2,7 @@ all:
 	mkdir -p /home/vahemere/data/mariadb
 	mkdir -p /home/vahemere/data/wordpress
 	sudo docker compose -f ./srcs/docker-compose.yml build #--progress=plain
-	sudo docker compose -f ./srcs/docker-compose.yml up 
+	sudo docker compose -f ./srcs/docker-compose.yml up -d
 
 logs:
 	docker logs wordpress

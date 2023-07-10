@@ -1,9 +1,11 @@
 cd /var/www/html/wordpress
 
+set -x
+
 if ! wp core is-installed; then
 wp config create	--allow-root --dbname=${SQL_DATABASE} \
-			--dbuser=${SQL_USER} \
-			--dbpass=${SQL_PASSWORD} \
+			--dbuser=${SQL_ADMIN} \
+			--dbpass=${SQL_ADMIN_PASSWORD} \
 			--dbhost=${SQL_HOST} \
 			--url=https://${DOMAIN_NAME};
 
