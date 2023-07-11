@@ -1,10 +1,9 @@
 all: 
 	mkdir -p /home/vahemere/data/mariadb
 	mkdir -p /home/vahemere/data/wordpress
+	cp /home/vahemere/.env /home/vahemere/inception/srcs
 	sudo docker compose -f ./srcs/docker-compose.yml build #--progress=plain
 	sudo docker compose -f ./srcs/docker-compose.yml up -d
-	if [ ! -f /home/vahemere/inception/srcs/.env];then
-		cp /home/vahemere/.env /home/vahemere/inception/srcs
 
 clean:
 	sudo docker container stop nginx mariadb wordpress
